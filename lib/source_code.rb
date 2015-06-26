@@ -1,4 +1,6 @@
 require "source_code/version"
 
-module SourceCode
+class Method
+  def source_code
+  end
 end
