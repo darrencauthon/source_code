@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["darren@cauthon.com"]
   spec.summary       = %q{Add a source_location to method, allowing you to see the source code.}
   spec.description   = %q{Add a source_location to method, allowing you to see the source code.}
-  spec.homepage      = ""
+  spec.homepage      = "https://www.github.com/darrencauthon/source_code"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
