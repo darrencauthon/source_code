@@ -18,12 +18,12 @@ module SourceCode
       source_location[0]
     end
 
-    def first_line
-      source_location[1] - 1
-    end
-
     def lines
       @lines ||= File.read(file).lines
+    end
+
+    def first_line
+      source_location[1] - 1
     end
 
     def last_line
