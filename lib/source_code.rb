@@ -1,7 +1,7 @@
 require "source_code/version"
 
-class Method
-  def source_code
+module SourceCode
+  def self.extract_source_for source_location
     file = source_location[0]
     starting_point = source_location[1] - 1
 
@@ -17,5 +17,11 @@ class Method
     end
     end_point += 1
     File.read(file).lines[starting_point...end_point].join
+  end
+end
+
+class Method
+  def source_code
+    SourceCode.extract_source_for source_location
   end
 end
