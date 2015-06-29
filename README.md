@@ -1,31 +1,30 @@
 # SourceCode
 
-TODO: Write a gem description
+Adds a ```source_code``` method to Method.  This will allow you to view the source code of any Ruby method.
 
-## Installation
-
-Add this line to your application's Gemfile:
+So let's say you have a method in a class like this:
 
 ```ruby
-gem 'source_code'
+class FancyClass
+
+  def do_something
+    1 + 1
+  end
+
+end
 ```
 
-And then execute:
+You've always been able to get a pointer to the method's source code like this:
 
-    $ bundle
+```ruby
+FancyClass.new.method(:do_something).source_location
+```
 
-Or install it yourself as:
+This gem adds ```.source_code```, so you can see the source like this:
 
-    $ gem install source_code
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Contributing
-
-1. Fork it ( https://github.com/[my-github-username]/source_code/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+```ruby
+puts FancyClass.new.method(:do_something).source_code
+#  def do_something
+#    1 + 1
+#  end
+```
