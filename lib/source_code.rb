@@ -1,3 +1,4 @@
+require "source_code/monkey_patch"
 require "source_code/version"
 
 module SourceCode
@@ -17,11 +18,5 @@ module SourceCode
     end
     end_point += 1
     File.read(file).lines[starting_point...end_point].join
-  end
-end
-
-class Method
-  def source_code
-    SourceCode.extract_source_for source_location
   end
 end
