@@ -27,12 +27,10 @@ module SourceCode
     end
 
     def last_line
-      indentation = indentation_on first_line
-
       index = first_line
       loop do
         index += 1
-        break unless indentation != indentation_on(index)
+        break unless indentation_on(first_line) != indentation_on(index)
       end
       index + 1
     end
