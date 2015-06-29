@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = SourceCode::VERSION
   spec.authors       = ["Darren Cauthon"]
   spec.email         = ["darren@cauthon.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{Add a source_location to method, allowing you to see the source code.}
+  spec.description   = %q{Add a source_location to method, allowing you to see the source code.}
   spec.homepage      = ""
   spec.license       = "MIT"
 
