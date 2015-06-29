@@ -12,7 +12,7 @@ module SourceCode
       source_location[0]
     end
 
-    def starting_point
+    def first_line
       source_location[1] - 1
     end
 
@@ -20,11 +20,10 @@ module SourceCode
       @lines ||= File.read(file).lines
     end
 
-    def ending_point
+    def last_line
+      indentation = indentation_on first_line
 
-      indentation = indentation_on starting_point
-
-      index = starting_point + 1
+      index = first_line + 1
       while indentation != indentation_on(index)
         index += 1
       end
@@ -36,7 +35,7 @@ module SourceCode
     end
 
     def source_code
-      lines[starting_point...ending_point].join
+      lines[first_line...last_line].join
     end
 
   end
