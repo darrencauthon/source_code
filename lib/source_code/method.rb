@@ -21,16 +21,21 @@ module SourceCode
     end
 
     def ending_point
-      indentation = lines[starting_point].length - lines[starting_point].lstrip.length
 
-      end_point = starting_point + 1
-      end_indentation = lines[end_point].length - lines[end_point].lstrip.length
+      indentation = indentation_on starting_point
+
+      index = starting_point + 1
+      end_indentation = lines[index].length - lines[index].lstrip.length
 
       while end_indentation != indentation
-        end_point += 1
-        end_indentation = lines[end_point].length - lines[end_point].lstrip.length
+        index += 1
+        end_indentation = lines[index].length - lines[index].lstrip.length
       end
-      end_point += 1
+      index + 1
+    end
+
+    def indentation_on line_number
+      lines[line_number].length - lines[line_number].lstrip.length
     end
 
     def source_code
