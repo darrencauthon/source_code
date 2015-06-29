@@ -1,6 +1,6 @@
-require "source_code/method"
-require "source_code/monkey_patch"
-require "source_code/version"
+require_relative "source_code/method"
+require_relative "source_code/monkey_patch"
+require_relative "source_code/version"
 
 module SourceCode
 
