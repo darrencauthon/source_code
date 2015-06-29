@@ -25,11 +25,8 @@ module SourceCode
       indentation = indentation_on starting_point
 
       index = starting_point + 1
-      end_indentation = lines[index].length - lines[index].lstrip.length
-
-      while end_indentation != indentation
+      while indentation != indentation_on(index)
         index += 1
-        end_indentation = lines[index].length - lines[index].lstrip.length
       end
       index + 1
     end
