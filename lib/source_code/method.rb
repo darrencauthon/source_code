@@ -8,6 +8,12 @@ module SourceCode
       @source_location = source_location
     end
 
+    def source_code
+      lines[first_line...last_line].join
+    end
+
+    private
+
     def file
       source_location[0]
     end
@@ -32,10 +38,6 @@ module SourceCode
 
     def indentation_on line_number
       lines[line_number].length - lines[line_number].lstrip.length
-    end
-
-    def source_code
-      lines[first_line...last_line].join
     end
 
   end
